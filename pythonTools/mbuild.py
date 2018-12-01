@@ -194,6 +194,11 @@ for option in options["Archivist"]:
     if option != "Default":
         outFile.write('#include "Archivist/'+option+'Archivist/'+option+'Archivist.h"\n')
 
+# modules.h:externs
+outFile.write('extern "C"{\n')
+outFile.write('  void configureDefaultsAndDocumentation();')
+outFile.write('}\n')
+
 # modules.h:makeWorld
 
 outFile.write('\n\n//create a world\n')
